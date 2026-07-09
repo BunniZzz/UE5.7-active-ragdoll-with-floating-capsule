@@ -8,7 +8,7 @@ public class ProjectSRTarget : TargetRules
 	public ProjectSRTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V2;
+		DefaultBuildSettings = BuildSettingsVersion.V6;
 
 		ExtraModuleNames.AddRange( new string[] { "ProjectSR" } );
 	}
