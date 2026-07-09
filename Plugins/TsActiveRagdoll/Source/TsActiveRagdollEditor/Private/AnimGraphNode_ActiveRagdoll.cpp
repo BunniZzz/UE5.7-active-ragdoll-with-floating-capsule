@@ -31,6 +31,17 @@ FText UAnimGraphNode_ActiveRagdoll::GetNodeTitle(ENodeTitleType::Type TitleType)
 void UAnimGraphNode_ActiveRagdoll::CreateOutputPins()
 {
 	const UAnimationGraphSchema* Schema = GetDefault<UAnimationGraphSchema>();
-	CreatePin(EGPD_Output, Schema->PC_Struct, TEXT(""), FComponentSpacePoseLink::StaticStruct(), /*bIsArray=*/ false, /*bIsReference=*/ false, TEXT("Pose"));
+
+	//CreatePin(EGPD_Output, Schema->PC_Struct, TEXT(""), FComponentSpacePoseLink::StaticStruct(), /*bIsArray=*/ false, /*bIsReference=*/ false, TEXT("Pose"));
+	FCreatePinParams PinParams;
+	PinParams.ContainerType = EPinContainerType::None;
+	// PinParams.bIsReference = false;   // if this field exists
+
+	CreatePin(
+		EGPD_Output,
+		Schema->PC_Struct,
+		FComponentSpacePoseLink::StaticStruct(),
+		TEXT("Pose"),
+		PinParams);
 }
 
