@@ -14,8 +14,9 @@ void ATsPlayerController::SetupInputComponent()
 
 	MoveAction = NewObject<UInputAction>(this);
 	MoveAction->ValueType = EInputActionValueType::Axis3D;
+
+
+	UE_LOG(LogTemp, Warning, TEXT("Adding Mapping Context"));
 	PawnMappingContext->MapKey(MoveAction, EKeys::W);
-
-
 
 }

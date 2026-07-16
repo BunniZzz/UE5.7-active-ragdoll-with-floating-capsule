@@ -41,6 +41,7 @@ void ATsPhysicsPlayerController::SetupInputComponent()
 	MapKey(PawnMappingContext, MoveAction, EKeys::A, true, true);
 	MapKey(PawnMappingContext, MoveAction, EKeys::D, false, true);
 
-
+	UE_LOG(LogTemp, Warning, TEXT("MoveAction: %s"),
+		*GetNameSafe(MoveAction));
 
 }

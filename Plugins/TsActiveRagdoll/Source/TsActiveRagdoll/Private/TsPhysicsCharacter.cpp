@@ -36,10 +36,17 @@ ATsPhysicsCharacter::ATsPhysicsCharacter()
 
 void ATsPhysicsCharacter::Move(const FInputActionValue& ActionValue)
 {
-	FVector Input = ActionValue.Get < FInputActionValue::Axis3D>();
+	UE_LOG(LogTemp, Warning, TEXT("MOVE FIRED"));
 
-	AddMovementInput(GetActorRotation().RotateVector(Input), MoveScale);
+	FVector Input =
+		ActionValue.Get<FVector>();
 
+	UE_LOG(LogTemp, Warning, TEXT("Input: %s"), *Input.ToString());
+
+	AddMovementInput(
+		GetActorRotation().RotateVector(Input),
+		MoveScale
+	);
 
 }
 
@@ -56,13 +63,14 @@ void ATsPhysicsCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-
 }
 
 // Called to bind functionality to input
 void ATsPhysicsCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	UE_LOG(LogTemp, Warning, TEXT("TsPhysicsCharacter SetupPlayerInputComponent"));
 
 	UEnhancedInputComponent* EIC = Cast<UEnhancedInputComponent>(PlayerInputComponent);
 	ATsPhysicsPlayerController* PhysicsPC = Cast<ATsPhysicsPlayerController>(Controller);

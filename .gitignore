@@ -72,3 +72,15 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+
+/Plugins/BZToolsCPP_1
+/Plugins/BZTools
+
+Content/TopDown/Blueprints/BP_TopDownGameMode.uasset
+/Content/Characters/Mannequins
+/Content/Cursor
+/Content/LevelPrototyping
+/Content/TopDown
+/Content/__ExternalActors__/TopDown/Lvl_TopDown
+/Content/__ExternalObjects__/TopDown/Lvl_TopDown
